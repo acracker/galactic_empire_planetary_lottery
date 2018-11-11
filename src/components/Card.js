@@ -40,7 +40,7 @@ class Card extends Component {
     }
 
     return(
-      <div className="card">
+      <div className="card" id="card">
         { card() }
       </div>
     );
