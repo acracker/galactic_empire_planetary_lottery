@@ -12,10 +12,15 @@ class Roulette extends Component {
 
   handleClick(e) {
     const el = e.target;
+    const rouletteCards = document.getElementsByClassName('roulette__card');
 
     switch(e.target.getAttribute('action')) {
       case 'spin':
         this.setState({ chosenPlanet: null });
+        for (let item of rouletteCards) {
+          item.classList.remove("roulette__card--stop");
+          item.classList.add("roulette__card--spin");
+        }
         el.setAttribute('action', 'stop');
         el.textContent ='Stop';
       break;
@@ -27,6 +32,10 @@ class Roulette extends Component {
             });
           })
           .then(() => {
+            for (let item of rouletteCards) {
+              item.classList.remove("roulette__card--spin");
+              item.classList.add("roulette__card--stop");
+            }
             el.setAttribute('action', 'spin');
             el.textContent = 'Spin again';
           });
@@ -44,14 +53,17 @@ class Roulette extends Component {
           action="stop" onClick={(e) => this.handleClick(e)}>
           Stop
         </button>
-
-        <div className="roulette__card roulette__previous"></div>
-        <div className="roulette__card roulette__current">
-          { chosenPlanet &&
-            <Card chosenCard={chosenPlanet} />
-          }
+        <div className="roulette__wrapper">
+          <div className="roulette__container">
+            <div className="roulette__card roulette__card--spin"></div>
+            <div className="roulette__card roulette__card--spin">
+              { chosenPlanet &&
+                <Card chosenCard={chosenPlanet} />
+              }
+            </div>
+            <div className="roulette__card roulette__card--spin"></div>
+          </div>
         </div>
-        <div className="roulette__card roulette__next"></div>
       </div>
     );
   }
