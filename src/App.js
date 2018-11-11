@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
+import Roulette from './components/Roulette';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>Olá, Mundo!</h1>
+        <header>
+          <h1>Galactic Empire's Planetary Roulette</h1>
+        </header>
+
+        <main>
+          <Roulette chosenPlanet={this.handleChosenPlanet} />
+        </main>
+
+        <footer></footer>
       </div>
     );
   }
