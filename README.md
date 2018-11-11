@@ -1,2 +1,1 @@
-# galactic_empire_planetary_roulette
-Galactic Empire's Planetary Roulette
+# Galactic Empire's Planetary Roulette
