@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Api from '../services/Api';
+import Films from './Films';
 
 class Card extends Component {
   constructor(props) {
@@ -21,9 +22,11 @@ class Card extends Component {
   render() {
     const planet = this.state.planet;
 
-    const card = function () {
-      if(planet) {
-        return(
+    console.log(planet);
+
+    return(
+      <div className="card" id="card">
+        { planet &&
           <div className="card__inner">
             <h2>{planet.name}</h2>
             <dl>
@@ -33,15 +36,12 @@ class Card extends Component {
               <dd>{planet.terrain}</dd>
               <dt>Population</dt>
               <dd>{planet.population}</dd>
+              { planet.population.length &&
+                <Films urls={planet.films} />
+              }
             </dl>
           </div>
-        );
-      }
-    }
-
-    return(
-      <div className="card" id="card">
-        { card() }
+        }
       </div>
     );
   }

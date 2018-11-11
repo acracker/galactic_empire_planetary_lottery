@@ -11,10 +11,13 @@ class Roulette extends Component {
   }
 
   handleClick(e) {
+    const el = e.target;
+
     switch(e.target.getAttribute('action')) {
       case 'spin':
         this.setState({ chosenPlanet: null });
-        e.target.setAttribute('action', 'stop');
+        el.setAttribute('action', 'stop');
+        el.textContent ='Stop';
       break;
       default:
         Api.getRequest('/planets/')
@@ -22,31 +25,31 @@ class Roulette extends Component {
             this.setState({
               chosenPlanet: getRandomIntInclusive(1, result.count),
             });
+          })
+          .then(() => {
+            el.setAttribute('action', 'spin');
+            el.textContent = 'Spin again';
           });
-
-        e.target.setAttribute('action', 'spin');
       break;
     }
   }
 
   render() {
-    const card = function () {
-      const chosenPlanet = this.state.chosenPlanet;
-      if (chosenPlanet) return <Card chosenCard={chosenPlanet} />;
-    }.bind(this);
+    const chosenPlanet = this.state.chosenPlanet;
 
     return (
       <div className="roulette">
         <button
-          className="roulette__button"
-          id="rouletteButton"
-          action="stop"
-          onClick={(e) => this.handleClick(e)}
-        ></button>
+          className="roulette__button" id="rouletteButton"
+          action="stop" onClick={(e) => this.handleClick(e)}>
+          Stop
+        </button>
 
         <div className="roulette__card roulette__previous"></div>
         <div className="roulette__card roulette__current">
-          { card() }
+          { chosenPlanet &&
+            <Card chosenCard={chosenPlanet} />
+          }
         </div>
         <div className="roulette__card roulette__next"></div>
       </div>
