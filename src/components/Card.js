@@ -26,17 +26,29 @@ class Card extends Component {
       <div className="card" id="card">
         { planet &&
           <div className="card__inner">
-            <h2>{planet.name}</h2>
-            <dl>
-              <dt>Climate</dt>
-              <dd>{planet.climate}</dd>
-              <dt>Terrain</dt>
-              <dd>{planet.terrain}</dd>
-              <dt>Population</dt>
-              <dd>{planet.population}</dd>
-              { planet.population.length &&
-                <Films urls={planet.films} />
-              }
+            <h2 className="card__title">{planet.name}</h2>
+            <dl className="card__list">
+              <div className="card__row">
+                <dt>Climate</dt>
+                <dd>{planet.climate}</dd>
+              </div>
+              <div className="card__row">
+                <dt>Terrain</dt>
+                <dd>{planet.terrain}</dd>
+              </div>
+              <div className="card__row">
+                <dt>Surface water</dt>
+                <dd>{planet.surface_water}</dd>
+              </div>
+              <div className="card__row">
+                <dt>Population</dt>
+                <dd>{planet.population}</dd>
+              </div>
+              <div className="card__row">
+                { planet.population.length &&
+                  <Films urls={planet.films} />
+                }
+              </div>
             </dl>
           </div>
         }

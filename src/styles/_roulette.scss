@@ -29,36 +29,31 @@
       width: 220px;
       height: 300px;
       border-radius: 10px;
+      position: relative;
     }
 
     &-back {
-      background-color: #997577;
+      background-color: #816271;
       background-image: url('./images/imperial_emblem_back.svg');
       background-position: center center;
-      background-attachment: fixed; 
+      background-attachment: scroll; 
       background-repeat: no-repeat;
       background-size: 125px;
-      border: 12px solid #f6d6bd;
-      box-shadow: 0 0 0 9px #997577 inset, 0 0 0 12px #f6d6bd inset;
+      border: 12px solid #c3a38a;
+      box-shadow: 0 0 0 9px #816271 inset, 0 0 0 12px #c3a38a inset;
       z-index: 2;
       backface-visibility: hidden;
     }
 
     &:first-child &-back {
-      background-color: #816271;
-      background-image: url('./images/imperial_emblem_front.svg');
-      background-position: center center;
-      background-attachment: fixed; 
-      background-repeat: no-repeat;
-      background-size: 125px;
-      border: 12px solid #4e495f;
-      box-shadow: 0 0 0 9px #816271 inset, 0 0 0 12px #4e495f inset;
+      background-color: #997577;
+      background-image: url('./images/imperial_emblem_back_choosable.svg');
+      border: 12px solid #f6d6bd;
+      box-shadow: 0 0 0 9px #997577 inset, 0 0 0 12px #f6d6bd inset;
     }
 
     &-front {
       margin-top: -300px;
-      // background: #F0F;
-      // border: 1px solid #0FF;
       z-index: 1;
     }
     
@@ -99,14 +94,25 @@
       animation-delay: 0s, 0.2s;
       z-index: 1;
 
-      & .roulette__card-back,
-      & .roulette__card-front {
+      .roulette__card-back,
+      .roulette__card-front {
         animation-name: flip;
         animation-duration: 1s;
         animation-timing-function: ease-out;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
         animation-delay: 0.2s;
+      }
+
+      .roulette__card-front {
+        border: 12px solid #f6d6bd;
+        background-color: #f6d6bd;
+        background-image: url('./images/imperial_emblem_front.svg');
+        background-position: center center;
+        background-attachment: scroll; 
+        background-repeat: no-repeat;
+        background-size: 300px;
+        box-shadow: 0 0 0 3px #c3a38a inset;
       }
     }
   }
@@ -116,55 +122,5 @@
     bottom: 1rem;
     right: 1rem;
     z-index: 3;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: translateX(150%) scale(0.5) rotate(10deg);
-    opacity: 0;
-  }
-
-  50% {
-    transform: translateX(0%) scale(1) rotate(0deg);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(-150%) scale(0.5) rotate(-10deg);
-    opacity: 0;
-  }
-}
-
-@keyframes fade-out {
-  0% {}
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes selected {
-  0% {}
-
-  100% {
-    transform: translateY(0) scale(1.4) rotateY(180deg);
-    opacity: 1;
-  }
-}
-
-@keyframes flip {
-  0% {}
-
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
-@keyframes fade-in {
-  0% {}
-
-  100% {
-    opacity: 1;
   }
 }

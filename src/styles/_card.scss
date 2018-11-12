@@ -1,0 +1,48 @@
+.card {
+  height: 252.5px;
+  overflow: hidden;
+  font-size: 0.8rem;
+  margin: 12px;
+  color: #0f2a3f;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  &__title {
+    margin: 5px 0 15px;
+    color: #4e495f;
+  }
+
+  &__list {
+    margin: 0;
+
+    dt {
+      font-weight: bold;
+      text-align: left;
+      margin-right: 10px;
+    }
+
+    dd {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      text-align: right;
+      font-size: 80%;
+      text-transform: uppercase;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    
+    &:nth-child(2n+1) {
+      background-color: #c3a38a;
+    }
+  }
+
+  &__inner-row {
+    display: flex;
+  }
+}

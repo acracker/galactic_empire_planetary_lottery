@@ -30,13 +30,15 @@ class Films extends Component {
     return(
       <React.Fragment>
         <dt>Films</dt>
-        {
-          films.length ?
-            films.map((film) => 
-              <dd key={film.episode_id}>{film.title}</dd>
-            ) :
-            <dd>None</dd> 
-        }
+        <div className="card__inner-row">
+          {
+            films.length ?
+              films.map((film) => 
+                <dd key={film.episode_id}>{film.title}</dd>
+              ) :
+              <dd>None</dd> 
+          }
+        </div>
       </React.Fragment>
     );
   }
