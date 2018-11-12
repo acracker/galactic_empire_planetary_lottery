@@ -16,36 +16,30 @@
 }
 
 @keyframes fade-out {
-  0% {}
-
-  100% {
+  to {
     opacity: 0;
   }
 }
 
 @keyframes selected {
-  0% {}
-
-  100% {
+  to {
     transform: translateY(0) scale(1.4) rotateY(180deg);
     opacity: 1;
   }
 }
 
 @keyframes flip {
-  0% {}
-
-  100% {
+  to {
     transform: rotateY(180deg);
   }
 }
 
 @keyframes fade-in {
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
   }
 }

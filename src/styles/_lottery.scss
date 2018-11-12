@@ -23,6 +23,7 @@
     top: 0;
     left: 50%;
     margin-left: -110px;
+    will-change: transform, opacity;
     
     &-back,
     &-front {
