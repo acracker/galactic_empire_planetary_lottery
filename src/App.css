@@ -344,16 +344,40 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -110px; }
+  margin-left: -110px;
+  transition: opacity 0.1s linear; }
   .roulette__card--spin {
     animation-name: spin;
-    animation-duration: 1.5s;
+    animation-duration: 1.2s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite; }
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards; }
     .roulette__card--spin:nth-child(2) {
-      animation-delay: 0.5s; }
+      animation-delay: 0.4s; }
     .roulette__card--spin:nth-child(3) {
-      animation-delay: 1s; }
+      animation-delay: 0.8s; }
+  .roulette__card--stop {
+    opacity: 0;
+    animation-name: spin, fade-out;
+    animation-duration: 1.2s, 0.2s;
+    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite, 1;
+    animation-play-state: paused, running;
+    animation-fill-mode: backwards, forwards;
+    animation-delay: 0s, 0s; }
+    .roulette__card--stop:nth-child(2) {
+      animation-delay: 0.4s, 0s; }
+    .roulette__card--stop:nth-child(3) {
+      animation-delay: 0.8s, 0s; }
+  .roulette__card--selected {
+    animation-name: spin, fade-out, selected;
+    animation-duration: 1.2s, 0.2s, 1s;
+    animation-timing-function: linear, linear, ease-out;
+    animation-iteration-count: infinite, 1, 1;
+    animation-play-state: paused, running, running;
+    animation-fill-mode: backwards, forwards, forwards;
+    animation-delay: 0s, 0s, 0.2s;
+    z-index: 1; }
 
 .roulette__button {
   position: fixed;
@@ -371,3 +395,18 @@ body {
   100% {
     transform: translateX(-150%) scale(0.5);
     opacity: 0; } }
+
+@keyframes fade-out {
+  0% { }
+  100% {
+    opacity: 0; } }
+
+@keyframes selected {
+  0% {
+    background: #0FF;
+    transform: scale(0);
+    opacity: 0; }
+  100% {
+    background: #FF0;
+    transform: scale(1.4);
+    opacity: 1; } }
