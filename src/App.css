@@ -314,9 +314,11 @@ body {
   line-height: 1.5;
   text-align: center;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #08141e; }
 
 .header {
+  color: #fcc918;
   position: relative;
   z-index: 1; }
 
@@ -338,8 +340,6 @@ body {
   width: 100%; }
 
 .roulette__card {
-  width: 220px;
-  height: 300px;
   position: absolute;
   top: 0;
   left: 50%;
@@ -347,16 +347,29 @@ body {
   .roulette__card-back, .roulette__card-front {
     width: 220px;
     height: 300px;
-    position: relative; }
+    border-radius: 10px; }
   .roulette__card-back {
-    background: #0FF;
-    border: 1px solid #F0F;
+    background-color: #997577;
+    background-image: url("./images/imperial_emblem_back.svg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 125px;
+    border: 12px solid #f6d6bd;
+    box-shadow: 0 0 0 9px #997577 inset, 0 0 0 12px #f6d6bd inset;
     z-index: 2;
     backface-visibility: hidden; }
+  .roulette__card:first-child .roulette__card-back {
+    background-color: #816271;
+    background-image: url("./images/imperial_emblem_front.svg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 125px;
+    border: 12px solid #4e495f;
+    box-shadow: 0 0 0 9px #816271 inset, 0 0 0 12px #4e495f inset; }
   .roulette__card-front {
     margin-top: -300px;
-    background: #F0F;
-    border: 1px solid #0FF;
     z-index: 1; }
   .roulette__card--spin {
     animation-name: spin;

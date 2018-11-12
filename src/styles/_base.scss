@@ -11,9 +11,11 @@ body {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $black;
 }
 
 .header {
+  color: $yellow;
   position: relative;
   z-index: 1;
 }

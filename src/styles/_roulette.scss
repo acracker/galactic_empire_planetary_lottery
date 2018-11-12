@@ -19,31 +19,46 @@
   }
 
   &__card {
-    width: 220px;
-    height: 300px;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -110px;
-
+    
     &-back,
     &-front {
       width: 220px;
       height: 300px;
-      position: relative;
+      border-radius: 10px;
     }
 
     &-back {
-      background: #0FF;
-      border: 1px solid #F0F;
+      background-color: #997577;
+      background-image: url('./images/imperial_emblem_back.svg');
+      background-position: center center;
+      background-attachment: fixed; 
+      background-repeat: no-repeat;
+      background-size: 125px;
+      border: 12px solid #f6d6bd;
+      box-shadow: 0 0 0 9px #997577 inset, 0 0 0 12px #f6d6bd inset;
       z-index: 2;
       backface-visibility: hidden;
     }
 
+    &:first-child &-back {
+      background-color: #816271;
+      background-image: url('./images/imperial_emblem_front.svg');
+      background-position: center center;
+      background-attachment: fixed; 
+      background-repeat: no-repeat;
+      background-size: 125px;
+      border: 12px solid #4e495f;
+      box-shadow: 0 0 0 9px #816271 inset, 0 0 0 12px #4e495f inset;
+    }
+
     &-front {
       margin-top: -300px;
-      background: #F0F;
-      border: 1px solid #0FF;
+      // background: #F0F;
+      // border: 1px solid #0FF;
       z-index: 1;
     }
     
