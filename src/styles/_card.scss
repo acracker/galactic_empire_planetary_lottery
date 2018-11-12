@@ -11,6 +11,8 @@
   &__title {
     margin: 5px 0 15px;
     color: #4e495f;
+    font-family: 'Star Jedi';
+    font-weight: normal;
   }
 
   &__list {
@@ -19,7 +21,7 @@
     dt {
       font-weight: bold;
       text-align: left;
-      margin-right: 10px;
+      margin-right: 20px;
     }
 
     dd {

@@ -81,7 +81,7 @@ class Roulette extends Component {
         </div>
         { this.state.spin === false &&
           <button
-            className="roulette__button" id="rouletteButton"
+            className="roulette__button" id="rouletteButton" title="Spin again"
             action="stop" onClick={() => this.handleButtonClick()}>
             Spin again
           </button>
