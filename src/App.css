@@ -480,11 +480,11 @@ body {
       background-size: 300px;
       box-shadow: 0 0 0 3px #c3a38a inset; }
 
-.lottery__button {
+.button {
   border: 0 none;
   position: fixed;
-  bottom: 36px;
-  right: 36px;
+  bottom: 24px;
+  right: 24px;
   height: 64px;
   width: 64px;
   border-radius: 64px;
@@ -505,12 +505,13 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.5s ease-out, box-shadow 0.5s ease-out; }
-  .lottery__button:hover, .lottery__button:focus, .lottery__button:active {
+  .button:hover, .button:focus, .button:active {
     outline: 0;
     transform: scale(0.9) rotate(-67.5deg);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); }
 
 .card {
+  opacity: 0;
   height: 252.5px;
   overflow: hidden;
   font-size: 0.8rem;
@@ -518,7 +519,8 @@ body {
   color: #0f2a3f;
   animation-name: fade-in;
   animation-duration: 1s;
-  animation-timing-function: ease-out; }
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; }
   .card__title {
     margin: 5px 0 15px;
     color: #4e495f;

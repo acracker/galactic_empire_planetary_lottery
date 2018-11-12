@@ -117,39 +117,4 @@
       }
     }
   }
-
-  &__button {
-    border: 0 none;
-    position: fixed;
-    bottom: 36px;
-    right: 36px;
-    height: 64px;
-    width: 64px;
-    border-radius: 64px;
-    background-color: $primary;
-    z-index: 3;
-    text-align: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: transparent;
-    animation-name: fade-in;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    background-image: url('./images/spin.svg');
-    background-position: center center;
-    background-attachment: scroll; 
-    background-repeat: no-repeat;
-    background-size: 36px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-    cursor: pointer;
-    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
-
-    &:hover,
-    &:focus,
-    &:active {
-      outline: 0;
-      transform: scale(0.9) rotate(-67.5deg);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.25);
-    }
-  }
 }
