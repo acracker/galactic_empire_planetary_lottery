@@ -420,6 +420,7 @@ body {
     z-index: 2;
     backface-visibility: hidden; }
   .roulette__card:first-child .roulette__card-back {
+    cursor: pointer;
     background-color: #997577;
     background-image: url("./images/imperial_emblem_back_choosable.svg");
     border: 12px solid #f6d6bd;
