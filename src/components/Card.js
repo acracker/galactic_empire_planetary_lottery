@@ -22,8 +22,6 @@ class Card extends Component {
   render() {
     const planet = this.state.planet;
 
-    console.log(planet);
-
     return(
       <div className="card" id="card">
         { planet &&
