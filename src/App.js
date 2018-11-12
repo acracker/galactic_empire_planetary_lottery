@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import Roulette from './components/Roulette';
+import Lottery from './components/Lottery';
 
 class App extends Component {
   render() {
     return (
       <div>
         <header className="header">
-          <h1>Galactic Empire's Planetary Roulette</h1>
+          <h1>Galactic Empire's Planetary Lottery</h1>
         </header>
         <main className="main">
-          <Roulette />
+          <Lottery />
         </main>
         <footer className="footer"></footer>
       </div>

@@ -3,7 +3,7 @@ import Api from '../services/Api';
 import { getRandomIntInclusive } from '../services/Utils';
 import Card from './Card';
 
-class Roulette extends Component {
+class Lottery extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,13 +17,13 @@ class Roulette extends Component {
   handleCardClick() {
     if (this.state.spin === true) {
       this.setState({ spin: false });
-      const rouletteCards = document.getElementsByClassName('roulette__card');
+      const lotteryCards = document.getElementsByClassName('lottery__card');
 
-      for (let i = 0; i < rouletteCards.length; i++) {
+      for (let i = 0; i < lotteryCards.length; i++) {
         if(i === 0) {
-          rouletteCards[i].classList.add('roulette__card--selected');
+          lotteryCards[i].classList.add('lottery__card--selected');
         } else {
-          rouletteCards[i].classList.add('roulette__card--stop');
+          lotteryCards[i].classList.add('lottery__card--stop');
         }
       }
 
@@ -42,13 +42,13 @@ class Roulette extends Component {
         chosenPlanet: null,
         spin: true
       });
-      const rouletteCards = document.getElementsByClassName('roulette__card');
+      const lotteryCards = document.getElementsByClassName('lottery__card');
 
-      for (let i = 0; i < rouletteCards.length; i++) {
+      for (let i = 0; i < lotteryCards.length; i++) {
         if(i === 0) {
-          rouletteCards[i].classList.remove('roulette__card--selected');
+          lotteryCards[i].classList.remove('lottery__card--selected');
         } else {
-          rouletteCards[i].classList.remove('roulette__card--stop');
+          lotteryCards[i].classList.remove('lottery__card--stop');
         }
       }
     }
@@ -58,30 +58,30 @@ class Roulette extends Component {
     const chosenPlanet = this.state.chosenPlanet;
 
     return (
-      <div className="roulette">
-        <div className="roulette__wrapper">
-          <div className="roulette__container">
-            <div className="roulette__card roulette__card--spin"
+      <div className="lottery">
+        <div className="lottery__wrapper">
+          <div className="lottery__container">
+            <div className="lottery__card lottery__card--spin"
               onClick={() => this.handleCardClick()}
             >
-              <div className="roulette__card-back"></div>
-              <div className="roulette__card-front">
+              <div className="lottery__card-back"></div>
+              <div className="lottery__card-front">
                 { chosenPlanet &&
                   <Card chosenCard={chosenPlanet} />
                 }
               </div>
             </div>
-            <div className="roulette__card roulette__card--spin">
-              <div className="roulette__card-back"></div>
+            <div className="lottery__card lottery__card--spin">
+              <div className="lottery__card-back"></div>
             </div>
-            <div className="roulette__card roulette__card--spin">
-              <div className="roulette__card-back"></div>
+            <div className="lottery__card lottery__card--spin">
+              <div className="lottery__card-back"></div>
             </div>
           </div>
         </div>
         { this.state.spin === false &&
           <button
-            className="roulette__button" id="rouletteButton" title="Spin again"
+            className="lottery__button" id="lotteryButton" title="Spin again"
             action="stop" onClick={() => this.handleButtonClick()}>
             Spin again
           </button>
@@ -91,4 +91,4 @@ class Roulette extends Component {
   }
 }
 
-export default Roulette;
+export default Lottery;

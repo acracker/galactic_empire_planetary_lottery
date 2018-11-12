@@ -381,7 +381,7 @@ body {
   line-height: 1;
   padding-top: 10px; }
 
-.roulette__wrapper {
+.lottery__wrapper {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -392,23 +392,23 @@ body {
   justify-content: center;
   overflow-x: hidden; }
 
-.roulette__container {
+.lottery__container {
   position: relative;
   text-align: center;
   height: 300px;
   width: 100%; }
 
-.roulette__card {
+.lottery__card {
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -110px; }
-  .roulette__card-back, .roulette__card-front {
+  .lottery__card-back, .lottery__card-front {
     width: 220px;
     height: 300px;
     border-radius: 10px;
     position: relative; }
-  .roulette__card-back {
+  .lottery__card-back {
     background-color: #816271;
     background-image: url("./images/imperial_emblem_back.svg");
     background-position: center center;
@@ -419,16 +419,16 @@ body {
     box-shadow: 0 0 0 9px #816271 inset, 0 0 0 12px #c3a38a inset;
     z-index: 2;
     backface-visibility: hidden; }
-  .roulette__card:first-child .roulette__card-back {
+  .lottery__card:first-child .lottery__card-back {
     cursor: pointer;
     background-color: #997577;
     background-image: url("./images/imperial_emblem_back_choosable.svg");
     border: 12px solid #f6d6bd;
     box-shadow: 0 0 0 9px #997577 inset, 0 0 0 12px #f6d6bd inset; }
-  .roulette__card-front {
+  .lottery__card-front {
     margin-top: -300px;
     z-index: 1; }
-  .roulette__card--spin {
+  .lottery__card--spin {
     animation-name: spin;
     animation-duration: 0.9s;
     animation-timing-function: linear;
@@ -436,11 +436,11 @@ body {
     animation-play-state: running;
     animation-fill-mode: backwards;
     animation-delay: 0s; }
-    .roulette__card--spin:nth-child(2) {
+    .lottery__card--spin:nth-child(2) {
       animation-delay: 0.3s; }
-    .roulette__card--spin:nth-child(3) {
+    .lottery__card--spin:nth-child(3) {
       animation-delay: 0.6s; }
-  .roulette__card--stop {
+  .lottery__card--stop {
     opacity: 0;
     animation-name: spin, fade-out;
     animation-duration: 0.9s, 0.2s;
@@ -449,11 +449,11 @@ body {
     animation-play-state: paused, running;
     animation-fill-mode: backwards, forwards;
     animation-delay: 0s, 0s; }
-    .roulette__card--stop:nth-child(2) {
+    .lottery__card--stop:nth-child(2) {
       animation-delay: 0.3s, 0s; }
-    .roulette__card--stop:nth-child(3) {
+    .lottery__card--stop:nth-child(3) {
       animation-delay: 0.6s, 0s; }
-  .roulette__card--selected {
+  .lottery__card--selected {
     animation-name: spin, selected;
     animation-duration: 0.9s, 1s;
     animation-timing-function: linear, ease-out;
@@ -462,15 +462,15 @@ body {
     animation-fill-mode: backwards, forwards;
     animation-delay: 0s, 0.2s;
     z-index: 1; }
-    .roulette__card--selected .roulette__card-back,
-    .roulette__card--selected .roulette__card-front {
+    .lottery__card--selected .lottery__card-back,
+    .lottery__card--selected .lottery__card-front {
       animation-name: flip;
       animation-duration: 1s;
       animation-timing-function: ease-out;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
       animation-delay: 0.2s; }
-    .roulette__card--selected .roulette__card-front {
+    .lottery__card--selected .lottery__card-front {
       border: 12px solid #f6d6bd;
       background-color: #f6d6bd;
       background-image: url("./images/imperial_emblem_front.svg");
@@ -480,7 +480,7 @@ body {
       background-size: 300px;
       box-shadow: 0 0 0 3px #c3a38a inset; }
 
-.roulette__button {
+.lottery__button {
   border: 0 none;
   position: fixed;
   bottom: 36px;
@@ -494,6 +494,9 @@ body {
   font-size: 0.8rem;
   font-weight: bold;
   color: transparent;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
   background-image: url("./images/spin.svg");
   background-position: center center;
   background-attachment: scroll;
@@ -502,7 +505,7 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.5s ease-out, box-shadow 0.5s ease-out; }
-  .roulette__button:hover, .roulette__button:focus, .roulette__button:active {
+  .lottery__button:hover, .lottery__button:focus, .lottery__button:active {
     outline: 0;
     transform: scale(0.9) rotate(-67.5deg);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); }

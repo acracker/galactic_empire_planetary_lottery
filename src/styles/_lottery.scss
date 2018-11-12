@@ -1,4 +1,4 @@
-.roulette {
+.lottery {
   &__wrapper {
     position: absolute;
     height: 100%;
@@ -95,8 +95,8 @@
       animation-delay: 0s, 0.2s;
       z-index: 1;
 
-      .roulette__card-back,
-      .roulette__card-front {
+      .lottery__card-back,
+      .lottery__card-front {
         animation-name: flip;
         animation-duration: 1s;
         animation-timing-function: ease-out;
@@ -105,7 +105,7 @@
         animation-delay: 0.2s;
       }
 
-      .roulette__card-front {
+      .lottery__card-front {
         border: 12px solid $white;
         background-color: $white;
         background-image: url('./images/imperial_emblem_front.svg');
@@ -132,6 +132,9 @@
     font-size: 0.8rem;
     font-weight: bold;
     color: transparent;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
     background-image: url('./images/spin.svg');
     background-position: center center;
     background-attachment: scroll; 

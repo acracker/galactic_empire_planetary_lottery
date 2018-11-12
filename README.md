@@ -1,1 +1,1 @@
-# Galactic Empire's Planetary Roulette
+# Galactic Empire's Planetary Lottery
