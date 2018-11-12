@@ -72,10 +72,10 @@ class Roulette extends Component {
               </div>
             </div>
             <div className="roulette__card roulette__card--spin">
-            <div className="roulette__card-back"></div>
+              <div className="roulette__card-back"></div>
             </div>
             <div className="roulette__card roulette__card--spin">
-            <div className="roulette__card-back"></div>
+              <div className="roulette__card-back"></div>
             </div>
           </div>
         </div>
