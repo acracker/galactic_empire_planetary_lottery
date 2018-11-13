@@ -13,7 +13,7 @@ class Card extends Component {
   componentDidMount() {
     const chosenCard = this.props.chosenCard;
 
-    Api.getRequest('/planets/' + chosenCard)
+    Api.getRequest('/planets/' + chosenCard + '/')
       .then((result) => {
         this.setState({ planet: result });
       });
