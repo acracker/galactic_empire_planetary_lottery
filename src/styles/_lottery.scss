@@ -111,7 +111,8 @@
       }
     }
 
-    &:not(&--selected) {
+    &:not(&--selected),
+    &:not(&--stop) {
       cursor: pointer;
     }
   }
