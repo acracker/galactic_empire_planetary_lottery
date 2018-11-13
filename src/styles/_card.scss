@@ -1,8 +1,9 @@
 .card {
   opacity: 0;
-  height: 252.5px;
+  overflow-y: auto;
+  height: 276px;
   font-size: 0.8rem;
-  margin: 12px;
+  padding: 12px;
   color: $gray900;
   animation-name: fade-in;
   animation-duration: 1s;
@@ -10,7 +11,7 @@
   animation-fill-mode: forwards;
 
   &__title {
-    margin: 5px 0 15px;
+    margin: 0 0 15px;
     color: $primary;
     font-family: 'Star Jedi';
     font-weight: normal;
@@ -18,7 +19,7 @@
   }
 
   &__list {
-    margin: 0;
+    margin: 0 0 15px;
 
     dt {
       font-weight: bold;
