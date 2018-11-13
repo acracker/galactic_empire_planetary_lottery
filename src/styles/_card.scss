@@ -1,7 +1,6 @@
 .card {
   opacity: 0;
   height: 252.5px;
-  overflow: hidden;
   font-size: 0.8rem;
   margin: 12px;
   color: $gray900;
@@ -15,6 +14,7 @@
     color: $primary;
     font-family: 'Star Jedi';
     font-weight: normal;
+    text-transform: lowercase;
   }
 
   &__list {
