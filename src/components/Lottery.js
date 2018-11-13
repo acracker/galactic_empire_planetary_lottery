@@ -8,12 +8,22 @@ class Lottery extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      planetCount: null,
       chosenCard: null,
       chosenPlanet: null,
       spin: true
     };
     this.handleCardClick = this.handleCardClick.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
+
+  componentWillMount() {
+    Api.getRequest('/planets/')
+      .then((result) => {
+        this.setState({
+          planetCount: result.count,
+        });
+      });
   }
 
   componentDidUpdate() {
@@ -47,12 +57,9 @@ class Lottery extends Component {
         }
       }
 
-      Api.getRequest('/planets/')
-        .then((result) => {
-          this.setState({
-            chosenPlanet: getRandomIntInclusive(1, result.count),
-          });
-        });
+      this.setState({
+        chosenPlanet: getRandomIntInclusive(1, this.state.planetCount),
+      });
     }
   }
 
