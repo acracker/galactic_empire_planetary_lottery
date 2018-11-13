@@ -57,13 +57,21 @@ class Lottery extends Component {
   }
 
   handleButtonClick() {
-    if (this.state.spin === false) {
+    const chosenCard = this.state.chosenCard;
+
+    if (this.state.spin === false && chosenCard) {
+      const lotteryCards = document.getElementsByClassName('lottery__card');
+
+      for (let i = 0; i < chosenCard.children.length; i++) {
+        if (chosenCard.children[i].className === 'lottery__card-front') {
+          ReactDOM.unmountComponentAtNode(chosenCard.children[i])
+        }
+      }
+
       this.setState({
-        chosenCard: null,
         chosenPlanet: null,
         spin: true
       });
-      const lotteryCards = document.getElementsByClassName('lottery__card');
 
       for (let i = 0; i < lotteryCards.length; i++) {
         lotteryCards[i].classList.remove('lottery__card--selected');
