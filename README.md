@@ -5,7 +5,9 @@
 ## Technology Stack
 
 - HTML5
-- CSS3
+- CSS3 (BEM)
 - JavaScript (ES7)
 - SCSS
 - React (create-react-app)
+
+> *Updated 2018-11-13: Any card is now choosable. Fixed background motion and font inconsistency. Added credits.*
