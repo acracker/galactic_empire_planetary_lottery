@@ -24,6 +24,7 @@
     left: 50%;
     margin-left: -110px;
     will-change: transform, opacity;
+    -webkit-tap-highlight-color: transparent;
     
     &-back,
     &-front {
@@ -44,14 +45,6 @@
       box-shadow: 0 0 0 9px $gray500 inset, 0 0 0 12px $gray200 inset;
       z-index: 2;
       backface-visibility: hidden;
-    }
-
-    &:first-child &-back {
-      cursor: pointer;
-      background-color: $gray400;
-      background-image: url('./images/imperial_emblem_back_choosable.svg');
-      border: 12px solid $white;
-      box-shadow: 0 0 0 9px $gray400 inset, 0 0 0 12px $white inset;
     }
 
     &-front {
@@ -116,6 +109,10 @@
         background-size: 300px;
         box-shadow: 0 0 0 3px $gray200 inset;
       }
+    }
+
+    &:not(&--selected) {
+      cursor: pointer;
     }
   }
 }
