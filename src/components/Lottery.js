@@ -17,7 +17,7 @@ class Lottery extends Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     Api.getRequest('/planets/')
       .then((result) => {
         this.setState({
