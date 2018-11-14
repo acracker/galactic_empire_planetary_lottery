@@ -13,7 +13,7 @@ class App extends Component {
           <Lottery />
         </main>
         <footer className="footer">
-          by <a href="https://github.com/glauberm" target="_blank"
+          <span>by</span> <a href="https://github.com/glauberm" target="_blank"
             rel="noopener noreferrer">Glauber Mota</a>
         </footer>
       </React.Fragment>
