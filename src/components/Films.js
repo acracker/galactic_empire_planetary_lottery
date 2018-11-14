@@ -11,16 +11,16 @@ class Films extends Component {
 
   componentDidMount() {
     const urls = this.props.urls;
-
+    
+    let arrayFilms = [];
     urls.forEach(async function(url) {
-      let arrayFilms = [];
       await Api.getRequest(url, false)
         .then((result) => {
           arrayFilms = arrayFilms.concat(result);
+        })
+        .then(() => {
+          this.setState({ films: arrayFilms });
         });
-      
-      this.setState({ films: arrayFilms });
-      
     }.bind(this));
   }
 
