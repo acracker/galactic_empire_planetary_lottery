@@ -25,7 +25,7 @@ class Card extends Component {
     return(
       <div className="card" id="card">
         { planet &&
-          <div className="card__inner">
+          <React.Fragment>
             <h2 className="card__title">{planet.name}</h2>
             <dl className="card__list">
               <div className="card__row">
@@ -50,7 +50,7 @@ class Card extends Component {
                 }
               </div>
             </dl>
-          </div>
+          </React.Fragment>
         }
       </div>
     );
