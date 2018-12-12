@@ -1,6 +1,6 @@
 # Galactic Empire's Planetary Lottery
 
-[https://glauberm.github.io/star-wars-game/](https://glauberm.github.io/star-wars-game/)
+[https://glauberm.github.io/star-wars/](https://glauberm.github.io/star-wars/)
 
 ## Technology Stack
 
